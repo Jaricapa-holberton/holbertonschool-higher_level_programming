@@ -12,10 +12,3 @@ if __name__ == "__main__":
             sum = sum + int(argv[i])
             i = i + 1
         print(sum)
-
-
-
-    
-        
-
-
