@@ -14,4 +14,3 @@ if __name__ == "__main__":
         while i <= argc - 1:
             print("{:d}: {:s}".format(i, argv[i]))
             i += 1
-   
