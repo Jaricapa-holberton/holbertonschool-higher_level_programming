@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-if __name__ == "__main__":
-    import hidden_4
-    stings = dir(hidden_4)
-    for string in strings:
-        if string[:2] != "__":
-            print(string)
+import hidden_4
+if __name__ == '__main__':
+    for i in dir(hidden_4):
+        if not i.startswith("__"):
+            print(i)
