@@ -1,3 +1,4 @@
 #!/usr/bin/python3
-class Square(object):
+'''Define a class: Square'''
+class Square():
     pass
