@@ -6,8 +6,7 @@ Define a class: Square
 
 class Square:
     '''A class to represent a square.'''
-    
-    def __init__(self, size = 0):
+    def __init__(self, size=0):
         '''
         Construct all the necessary attributes for the square object.
         '''
