@@ -4,9 +4,6 @@ Define a class: Square
 '''
 
 
-from typing import Sized
-
-
 class Square:
     '''A class to represent a square.'''
     def __init__(self, size=0):
