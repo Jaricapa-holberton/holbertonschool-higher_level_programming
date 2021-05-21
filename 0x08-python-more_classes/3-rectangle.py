@@ -73,4 +73,4 @@ class Rectangle():
             string_of_sym = ""
             for i in range(self.__height):
                 string_of_sym += ("#" * self.__width) + "\n"
-            return (string_of_sym)
+            return (string_of_sym[:-1])
