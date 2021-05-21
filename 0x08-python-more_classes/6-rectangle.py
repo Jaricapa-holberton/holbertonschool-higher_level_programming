@@ -7,11 +7,11 @@ Define a class: Rectangle
 class Rectangle():
     '''A class to represent a rectangle.'''
 
-    instance_num = 0
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         """Construct all the necessary attributes for Rectangle object."""
-        type(self).instance_num += 1
+        type(self).number_of_instances += 1
         self.height = height
         self.width = width
 
@@ -92,5 +92,5 @@ class Rectangle():
     def __del__(self):
         """Delete a Rectangle object and print 'Bye rectangle...' mesage"""
 
-        type(self).instance_num -= 1
+        type(self).number_of_instances -= 1
         print("Bye rectangle...")
