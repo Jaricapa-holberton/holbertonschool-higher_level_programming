@@ -1,0 +1,73 @@
+==============================
+How use 0-add_integer function
+==============================
+
+=====
+Usage
+=====
+
+Import the function:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Test for Success Cases:
+
+Tests for Positive Numbers.
+
+    >>> s1 = [[10, 7], [10, 7.5], [2.2, 20]]
+    >>> [add_integer(l[0], l[1]) for l in s1]
+    [17, 17, 22]
+
+Tests for Negative Numbers.
+    >>> s2 = [[10, -7], [-10, 7.5], [-2.2, -20]]
+    >>> [add_integer(l[0], l[1]) for l in s2]
+    [3, -3, -22]
+
+Tests for Only one Number.
+    >>> s3 = [1, -7, 0.5, -98.5]
+    >>> [add_integer(num) for num in s3]
+    [99, 91, 98, 0]
+
+Test Error Cases.
+
+    >>> import sys
+    >>> def errorMesage(input_wrong):
+    ...     """Return an exception if is raised"""
+    ...     try:
+    ...             if len(input_wrong) == 2:
+    ...                     return add_integer(input_wrong[0], input_wrong[1])
+    ...             else:
+    ...                     return add_integer(input_wrong[0])
+    ...     except:
+    ...             return str(sys.exc_info()[1])
+    ...
+    >>>
+
+    >>> def identifyError(error):
+    ...     """Identify a custum error and return its number identifier"""
+    ...     if error == str(TypeError("a must be an integer")):
+    ...             return 1
+    ...     elif error == str(TypeError("b must be an integer")):
+    ...             return 2
+    ...     elif error == str(OverflowError("cannot convert float infinity to integer")):
+    ...             return 3
+    ...     elif error == str(ValueError("cannot convert float NaN to integer")):
+    ...             return 4
+    ...     else:
+    ...             return 0
+    ...
+    >>>
+
+    >>> e1 = [["Hello", 2], [True, 1], [None, "World"], [None]]
+    >>> e2 = [[10, "Cats"], [2, False]]
+    >>> e3 = [[float('inf')], [10, float('inf')]]
+    >>> e4 = [[float('nan')], [10, float('nan')]]
+    >>> error_cases = e1 + e2 + e3 + e4
+
+    >>> l_errors = [errorMesage(l) for l in error_cases]
+    >>> [identifyError(e) for e in l_errors]
+    [1, 1, 1, 1, 2, 2, 3, 3, 4, 4]
+
+    >>> add_integer()
+    Traceback (most recent call last):
+    TypeError: add_integer() missing 1 required positional argument: 'a'
