@@ -1,0 +1,56 @@
+====================================
+How use 5-text_indentation
+====================================
+=====
+Usage
+=====
+
+--------------------
+Import the function:
+--------------------
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+--------------------------------
+Test for Succes Cases:
+--------------------------------
+    
+Tests for positive int value.
+
+    >>> text_indentation("Hello World.")
+    Hello World.
+
+    >>> text_indentation("Quonam modo?")
+    Quonam modo?
+
+---------------------------------
+Test for error Cases:
+---------------------------------
+
+Tests for None input.
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Tests for a number value.
+    >>> text_indentation(2)
+    Traceback (most recent call last):
+    ValueError: text must be a string
+
+Tests for a boolean value.
+    >>> text_indentation(False)
+    Traceback (most recent call last):
+    ValueError: text must be a string
+  
+Tests for a list object.
+    >>> text_indentation([1, 2, 3])
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+---------------------------------
+Pep8 style:
+---------------------------------
+
+    >>> import os
+    >>> os.popen("pep8 5-text_indentation.py").read()
+    ''
