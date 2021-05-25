@@ -1,0 +1,57 @@
+====================================
+How use 3-say_my_name
+====================================
+=====
+Usage
+=====
+
+--------------------
+Import the function:
+--------------------
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+--------------------------------
+Test for Succes Cases:
+--------------------------------
+
+    >>> say_my_name("Jose")
+    My name is Jose 
+
+    >>> say_my_name("", "Perez")
+    My name is  Perez
+
+    >>> say_my_name("", "")
+    My name is  
+
+---------------------------------
+Test for error Cases:
+---------------------------------
+    
+Tests for first argument as number.
+    >>> say_my_name(1, "Hola")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+Tests for second argument as number.
+    >>> say_my_name("Hola", 1)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+Tests for first and second argument as None.
+    >>> say_my_name(None, None)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+ Tests for empty arguments.
+    >>> say_my_name()
+    Traceback (most recent call last):
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+--------------------------------
+Pep8 style:
+--------------------------------
+
+    >>> import os
+    >>> os.popen("pep8 3-say_my_name.py").read()
+    ''
