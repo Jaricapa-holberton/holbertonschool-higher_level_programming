@@ -31,52 +31,52 @@ Test for error Cases:
 Tests for matrix is not a list.
     >>> lazy_matrix_mul({'a': 1, 'b': '2'}, [[1, 2]])
     Traceback (most recent call last):
-    NewError: new m_a must be a list
+    IndexError: new m_a must be a list
     
     >>> lazy_matrix_mul([[1, 2]], {'a': 1, 'b': '2'})
     Traceback (most recent call last):
-    NewError: new m_b must be a list
+    IndexError: new m_b must be a list
      
 
 Tests for matrix is not a list of list.
     >>> lazy_matrix_mul([[1, 2.68], "Breakfast", 1], [[1, 2]])
     Traceback (most recent call last):
-    NewError: new m_a must be a list of lists
+    IndexError: new m_a must be a list of lists
 
     >>> lazy_matrix_mul([[1, 2]], [[1, 2.68], "Breakfast", 1])
     Traceback (most recent call last):
-    NewError: new m_b must be a list of lists
+    IndexError: new m_b must be a list of lists
 
 Tests for matrix = None.
     >>> lazy_matrix_mul([[]], [[1, 2.68]])
     Traceback (most recent call last):
-    NewError: new m_a can't be empty
+    IndexError: new m_a can't be empty
 
     >>> lazy_matrix_mul([[1, 2.68]], [[]])
     Traceback (most recent call last):
-    NewError: new m_b can't be empty
+    IndexError: new m_b can't be empty
 
 Tests for all elements are int or float.
     >>> lazy_matrix_mul([['a', 2]], [[1, 4], [5, 2]])
     Traceback (most recent call last):
-    NewError: new m_a should contain only integers or floats
+    IndexError: new m_a should contain only integers or floats
 
     >>> lazy_matrix_mul([[1, 2]], [['a', 4], [5, 'b']])
     Traceback (most recent call last):
-    NewError: new m_b should contain only integers or floats
+    IndexError: new m_b should contain only integers or floats
 
 Tests for all ‘rows’ should be of the same size.
     >>> lazy_matrix_mul([[1, 2, 6], [3, 7, 9]], [[3, 4], [5, 6]])
     Traceback (most recent call last):
-    NewError: new each row of m_a must be of the same size
+    IndexError: new each row of m_a must be of the same size
 
     >>> lazy_matrix_mul([[[1, 2], [3, 7]], [[3, 4, 5], [5, 6, 7]])
     Traceback (most recent call last):
-    NewError: new each row of m_b must be of the same size
+    IndexError: new each row of m_b must be of the same size
 
 Tests for multiply the matrix.
     >>> lazy_matrix_mul([[1, 2]], [[5, 6]])
-    NewError: new m_a and m_b can't be multiplied
+    IndexError: new m_a and m_b can't be multiplied
 
 ---------------------------------
 Pep8 style:
