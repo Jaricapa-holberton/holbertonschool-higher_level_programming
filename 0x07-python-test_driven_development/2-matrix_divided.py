@@ -31,7 +31,7 @@ def matrix_divided(matrix, div):
         raise TypeError(message_2)
     if ((matrix is None) and (div is None)):
         raise TypeError(message_1)
-    if (div is 0):
+    if (div == 0):
         raise ZeroDivisionError(message_3)
     for rows in matrix:
         if ((len(rows)) is not (len(matrix[0]))):
