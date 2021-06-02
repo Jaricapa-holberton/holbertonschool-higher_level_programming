@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Define Student class"""
+"""Define the Student class"""
 
 
 class Student:
@@ -15,6 +15,6 @@ class Student:
         """Retrieve a dictionary representation of a Student instance"""
 
         if type(attrs) == list and all(type(i) == str for i in attrs):
-            k_v = [[k, getattr(self, k)] for k in attrs if hasattr(self, k)]
-            return dict(k_v)
+            dic1 = [[k, getattr(self, k)] for k in attrs if hasattr(self, k)]
+            return dict(dic1)
         return self.__dict__
