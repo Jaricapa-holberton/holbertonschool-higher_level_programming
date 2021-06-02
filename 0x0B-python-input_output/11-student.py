@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Define Student class"""
+"""Define the Student class"""
 
 
 class Student:
@@ -15,12 +15,12 @@ class Student:
         """Retrieve a dictionary representation of a Student instance"""
 
         if type(attrs) == list and all(type(i) == str for i in attrs):
-            k_v = [[k, getattr(self, k)] for k in attrs if hasattr(self, k)]
-            return dict(k_v)
+            dic1 = [[k, getattr(self, k)] for k in attrs if hasattr(self, k)]
+            return dict(dic1)
         return self.__dict__
 
     def reload_from_json(self, json):
         """Replace all attributes of the Student instance"""
 
-        for k, v in json.items():
-            setattr(self, k, v)
+        for key, value in json.items():
+            setattr(self, key, value)
