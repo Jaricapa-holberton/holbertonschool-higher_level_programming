@@ -4,7 +4,7 @@
 
 def write_file(filename="", text=""):
     """
-    Read a text file (UTF8) and prints it to stdout
+    write a text file with UTF-8 encoding
 
     parametters:
     *filename: a string of the file name
