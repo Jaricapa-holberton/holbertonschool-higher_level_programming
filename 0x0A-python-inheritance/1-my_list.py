@@ -7,7 +7,7 @@ class MyList(list):
     An inherited list class
 
     methods:
-    *print_sorted(): Print a sorted list
+    *print_sorted(): Print a sorted list to stdout
     """
 
     def print_sorted(self):
