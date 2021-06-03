@@ -1,0 +1,42 @@
+===========================
+How use MyList class
+===========================
+
+=====
+Usage
+=====
+
+Import the class:
+
+    >>> MyList = __import__('1-my_list').MyList
+
+Intance MyList object:
+
+    >>> list1 = MyList()
+    >>> type(list1)
+    <class '1-my_list.MyList'>
+
+    >>> print(list1)
+    []
+
+Test for Success Cases:
+
+    >>> list1.append(1)
+    >>> list1.append(-29)
+    >>> print(list1)
+    [1, -29]
+
+    >>> list1.print_sorted()
+    [-29, 1]
+
+    >>> list2 = MyList()
+    >>> list2.print_sorted()
+    []
+
+--------------------
+PEP8 STYLE
+--------------------
+
+    >>> import os
+    >>> os.popen("pep8 1-my_list.py").read()
+    ''
