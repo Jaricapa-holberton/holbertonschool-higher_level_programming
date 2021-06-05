@@ -88,9 +88,13 @@ class Rectangle(Base):
 
     def display(self):
         """Print a string of a Rectangle object"""
-        for i in range(self.height):
+        for i in range(self.__y):
+            print()
+        for j in range(self.height):
+            for k in range(self.__x):
+                print(' ', end='')
             row = ""
-            for j in range(self.width):
+            for l in range(self.width):
                 row += "#"
             print(row)
 
