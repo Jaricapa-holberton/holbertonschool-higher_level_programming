@@ -31,7 +31,7 @@ class Rectangle(Base):
     @property
     def width(self):
         """Getter or Setter for Rectangle's width"""
-        return self.__width
+        return (self.__width)
 
     @width.setter
     def width(self, value):
@@ -44,7 +44,7 @@ class Rectangle(Base):
     @property
     def height(self):
         """Getter or Setter for Rectangle's height"""
-        return self.__height
+        return (self.__height)
 
     @height.setter
     def height(self, value):
@@ -57,7 +57,7 @@ class Rectangle(Base):
     @property
     def x(self):
         """Getter or Setter for Rectangle's x position"""
-        return self.__x
+        return (self.__x)
 
     @x.setter
     def x(self, value):
@@ -70,7 +70,7 @@ class Rectangle(Base):
     @property
     def y(self):
         """Getter or Setter for Rectangle's y"""
-        return self.__y
+        return (self.__y)
 
     @y.setter
     def y(self, value):
@@ -79,3 +79,6 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        return (self.height * self.width)
