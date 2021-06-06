@@ -109,15 +109,23 @@ class Rectangle(Base):
         ))
 
     def update(self, *args, **kwargs):
-            attributes = ["id", "x", "y", "width", "height"]
-            if args and len(args) > 0:
-                super().__init__(args[0])
-                for position, value in enumerate(args[1:], 1):
-                    setattr(self, attributes[position], value)
-            else:
-                for key in kwargs.keys():
-                    if key in attributes:
-                        if key == "id":
-                            super().__init__(kwargs.get(key))
-                        else:
-                            setattr(self, key, kwargs.get(key))
+        """
+        Update the class Rectangle by adding the public method that
+        assigns an argument to each attribute.
+        1st argument should be the id attribute.
+        2nd argument should be the size attribute.
+        3rd argument should be the x attribute.
+        4th argument should be the y attribute.
+        """
+        attributes = ["id", "width", "height", "x", "y"]
+        if args and len(args) > 0:
+            super().__init__(args[0])
+            for position, value in enumerate(args[1:], 1):
+                setattr(self, attributes[position], value)
+        else:
+            for key in kwargs.keys():
+                if key in attributes:
+                    if key == "id":
+                        super().__init__(kwargs.get(key))
+                    else:
+                        setattr(self, key, kwargs.get(key))
