@@ -108,9 +108,16 @@ class Rectangle(Base):
             self.height
         )
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
             attributes = ["id", "width", "height", "x", "y"]
             if args and len(args) > 0:
                 super().__init__(args[0])
                 for position, value in enumerate(args[1:], 1):
                     setattr(self, attributes[position], value)
+            else:
+                for key in kwargs.keys():
+                    if key in attributes:
+                        if key is "id":
+                            super().__init__(kwargs.get(key))
+                        else:
+                            setattr(self, key, kwargs.get(key))

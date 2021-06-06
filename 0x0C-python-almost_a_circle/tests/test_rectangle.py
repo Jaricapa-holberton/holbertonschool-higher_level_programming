@@ -127,3 +127,21 @@ class TestRectangle_update(unittest.TestCase):
         self.assertEqual("[Rectangle] (15) 10/4 - 8/9", str(r))
         r.update(16, 11, 12, 13, 14)
         self.assertEqual("[Rectangle] (16) 13/14 - 11/12", str(r))
+
+        def test_update_kwargs(self):
+            r = Rectangle(1, 2, 3, 4)
+
+            _id = r.id
+            r.update(id=None)
+            self.assertEqual("[Rectangle] ({}) 3/4 - 1/2".format(_id + 1), str(r))
+
+            r.update(id=12)
+            self.assertEqual("[Rectangle] (12) 3/4 - 1/2", str(r))
+            r.update(width=5, id=13)
+            self.assertEqual("[Rectangle] (13) 3/4 - 5/2", str(r))
+            r.update(height=7, id=14, width=6)
+            self.assertEqual("[Rectangle] (14) 3/4 - 6/7", str(r))
+            r.update(id=15, x=10, width=8, height=9)
+            self.assertEqual("[Rectangle] (15) 10/4 - 8/9", str(r))
+            r.update(height=12, y=14, id=16, x=13, width=11)
+            self.assertEqual("[Rectangle] (16) 13/14 - 11/12", str(r))
