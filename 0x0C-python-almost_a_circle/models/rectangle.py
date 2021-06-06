@@ -109,7 +109,7 @@ class Rectangle(Base):
         )
 
     def update(self, *args, **kwargs):
-            attributes = ["id", "width", "height", "x", "y"]
+            attributes = ["id", "x", "y", "width", "height"]
             if args and len(args) > 0:
                 super().__init__(args[0])
                 for position, value in enumerate(args[1:], 1):
