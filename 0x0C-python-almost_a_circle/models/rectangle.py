@@ -107,3 +107,10 @@ class Rectangle(Base):
             self.width,
             self.height
         )
+
+    def update(self, *args):
+            attributes = ["id", "width", "height", "x", "y"]
+            if args and len(args) > 0:
+                super().__init__(args[0])
+                for position, value in enumerate(args[1:], 1):
+                    setattr(self, attributes[position], value)

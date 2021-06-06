@@ -106,3 +106,24 @@ class TestRectangle_printMethods(unittest.TestCase):
     def test_str(self):
         str1 = str(Rectangle(4, 6, 2, 1, 12))
         self.assertEqual("[Rectangle] (12) 2/1 - 4/6", str1)
+
+class TestRectangle_update(unittest.TestCase):
+    """Test case for area method in Rectangle class"""
+
+    def test_update_args(self):
+        r = Rectangle(1, 2, 3, 4)
+
+        _id = r.id
+        r.update(None)
+        self.assertEqual("[Rectangle] ({}) 3/4 - 1/2".format(_id + 1), str(r))
+
+        r.update(12)
+        self.assertEqual("[Rectangle] (12) 3/4 - 1/2", str(r))
+        r.update(13, 5)
+        self.assertEqual("[Rectangle] (13) 3/4 - 5/2", str(r))
+        r.update(14, 6, 7)
+        self.assertEqual("[Rectangle] (14) 3/4 - 6/7", str(r))
+        r.update(15, 8, 9, 10)
+        self.assertEqual("[Rectangle] (15) 10/4 - 8/9", str(r))
+        r.update(16, 11, 12, 13, 14)
+        self.assertEqual("[Rectangle] (16) 13/14 - 11/12", str(r))
