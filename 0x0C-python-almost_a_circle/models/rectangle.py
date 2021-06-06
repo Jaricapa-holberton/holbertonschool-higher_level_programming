@@ -100,13 +100,13 @@ class Rectangle(Base):
 
     def __str__(self):
         """Return an informal printable string of a Rectangle object."""
-        return "[Rectangle] ({}) {}/{} - {}/{}". format(
+        return ("[Rectangle] ({}) {}/{} - {}/{}". format(
             self.id,
             self.x,
             self.y,
             self.width,
             self.height
-        )
+        ))
 
     def update(self, *args, **kwargs):
             attributes = ["id", "x", "y", "width", "height"]
@@ -117,7 +117,7 @@ class Rectangle(Base):
             else:
                 for key in kwargs.keys():
                     if key in attributes:
-                        if key is "id":
+                        if key == "id":
                             super().__init__(kwargs.get(key))
                         else:
                             setattr(self, key, kwargs.get(key))
