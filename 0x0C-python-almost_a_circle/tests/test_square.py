@@ -70,3 +70,36 @@ class TestSquare_init(unittest.TestCase):
 
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Square(1, y=-3)
+
+class TestSquare_update(unittest.TestCase):
+    """Test case for area method in Square class"""
+
+    def test_update_args(self):
+        s = Square(1, 3, 4)
+        _id = s.id
+        s.update(None)
+        self.assertEqual("[Square] ({}) 3/4 - 1".format(_id + 1), str(s))
+
+        s.update(12)
+        self.assertEqual("[Square] (12) 3/4 - 1", str(s))
+        s.update(13, 5)
+        self.assertEqual("[Square] (13) 3/4 - 5", str(s))
+        s.update(15, 8, 10)
+        self.assertEqual("[Square] (15) 10/4 - 8", str(s))
+        s.update(16, 11, 13, 14)
+        self.assertEqual("[Square] (16) 13/14 - 11", str(s))
+
+    def test_update_kwargs(self):
+        s = Square(1, 3, 4)
+        _id = s.id
+        s.update(id=None)
+        self.assertEqual("[Square] ({}) 3/4 - 1".format(_id + 1), str(s))
+
+        s.update(id=12)
+        self.assertEqual("[Square] (12) 3/4 - 1", str(s))
+        s.update(size=5, id=13)
+        self.assertEqual("[Square] (13) 3/4 - 5", str(s))
+        s.update(id=15, x=10, size=8)
+        self.assertEqual("[Square] (15) 10/4 - 8", str(s))
+        s.update(y=14, id=16, x=13, size=11)
+        self.assertEqual("[Square] (16) 13/14 - 11", str(s))
