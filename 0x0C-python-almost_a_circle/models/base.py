@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+import json
+
 class Base:
     """
     Creates a class Base for do some operations
@@ -22,3 +24,9 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    def to_json_string(list_dictionaries):
+        return (json.dumps(list_dictionaries))
+
+    def save_to_file(cls, list_objs):
+        return (json.loads(list_objs))
