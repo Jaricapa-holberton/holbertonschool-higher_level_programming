@@ -133,10 +133,10 @@ class Rectangle(Base):
     def to_dictionary(self):
         """
         Public method that returns the dictionary representation
-        of a Square.
+        of a Rectangle.
         """
         keys_dict = ["id", "width", "height", "x", "y"]
         dict_rect = {}
         for keys in keys_dict:
-            dict_rect.update({keys:getattr(self, keys)})
+            dict_rect.update({keys: getattr(self, keys)})
         return (dict_rect)

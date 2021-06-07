@@ -73,3 +73,14 @@ class Square(Rectangle):
                         Base.__init__(self, kwargs.get(key))
                     else:
                         setattr(self, key, kwargs.get(key))
+
+    def to_dictionary(self):
+        """
+        Public method that returns the dictionary representation
+        of a Square.
+        """
+        keys_dict = ["id", "size", "x", "y"]
+        dict_rect = {}
+        for keys in keys_dict:
+            dict_rect.update({keys: getattr(self, keys)})
+        return (dict_rect)
