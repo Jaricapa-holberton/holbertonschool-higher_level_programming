@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import json
 
+
 class Base:
     """
     Creates a class Base for do some operations
@@ -27,6 +28,10 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """
+        Static method that returns the JSON string representation
+        of list_dictionaries.
+        """
         if list_dictionaries is None or list_dictionaries == []:
             return ("[]")
         else:
@@ -34,6 +39,10 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """
+        Class method that writes the JSON string representation
+        of list_objs to a file.
+        """
         filename = cls.__name__ + ".json"
         with open(filename, mode="w") as myfile:
             if list_objs is None:
