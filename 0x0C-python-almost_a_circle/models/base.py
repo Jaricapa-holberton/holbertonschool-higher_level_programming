@@ -14,7 +14,7 @@ class Base:
 
     def __init__(self, id=None):
         """
-        Inicialize a Base object
+        Initialize a Base object
 
         parametters:
         *self: the class itself

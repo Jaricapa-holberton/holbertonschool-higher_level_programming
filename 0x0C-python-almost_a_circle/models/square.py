@@ -14,7 +14,7 @@ class Square(Rectangle):
 
     def __init__(self, size, x=0, y=0, id=None):
         """
-        Inicialize a square object
+        Initialize a square object
 
         parametters:
         *size (int): Square's size
@@ -25,26 +25,27 @@ class Square(Rectangle):
 
     @property
     def size(self):
-        """Getter or Setter for Square's size"""
+        """
+        Method to return (getter) the value of private attribute.
+        Returns:
+            Value of width.
+        """
         return (self.width)
 
     @size.setter
     def size(self, value):
-        """Method to setter private attribute.
+        """
+        Method to setter private attribute.
         Args:
             value (int): New size of size.
-        """
-        """
-        if type(value) is not int:
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
         """
         self.width = value
         self.height = value
 
     def __str__(self):
-        """Return an informal printable string of a Square object."""
+        """
+        Return an informal printable string of a Square object.
+        """
         return ("[Square] ({}) {}/{} - {}".format(
             self.id,
             self.x,
@@ -56,6 +57,7 @@ class Square(Rectangle):
         """
         Update the class Rectangle by adding the public method that
         assigns an argument to each attribute.
+        
         1st argument should be the id attribute.
         2nd argument should be the size attribute.
         3rd argument should be the x attribute.
