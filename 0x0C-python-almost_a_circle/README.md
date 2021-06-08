@@ -2,7 +2,7 @@
 
 ## Content
 
-This project models a Rectangle and an Square. This class have a methods that permit permit created and save all created objects in a json file Rectangle.json and Square.json respectiely. Also you can read this files and create the objects.
+This project models a Rectangle and an Square. This class have a methods that allow create and save all created objects in a json file Rectangle.json and Square.json respectiely. Also you can read this files and create the objects.
 
 Examples:
 Save objects in json file

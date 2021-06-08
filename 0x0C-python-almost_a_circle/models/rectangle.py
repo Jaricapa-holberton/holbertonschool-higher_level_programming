@@ -59,7 +59,6 @@ class Rectangle(Base):
         Returns:
             Value of heigth.
         """
-        return s
         return (self.__height)
 
     @height.setter
