@@ -57,7 +57,7 @@ class Square(Rectangle):
         """
         Update the class Rectangle by adding the public method that
         assigns an argument to each attribute.
-        
+
         1st argument should be the id attribute.
         2nd argument should be the size attribute.
         3rd argument should be the x attribute.
