@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Hola esta es la prueba
+Base Class
 """
 import json
 

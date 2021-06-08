@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Hola esta es la prueba"""
+"""
+Rectangle class that inherits from Base
+"""
 from models.base import Base
 
 
