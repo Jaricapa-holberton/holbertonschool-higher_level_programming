@@ -1,7 +1,7 @@
 -- Creates a table second_table in the database hbtn_0c_0 in the current database in my MySQL server.
 CREATE TABLE IF NOT EXISTS `first_table` (
     `id` INT,
-    `name` VARCHAR(256)
+    `name` VARCHAR(256),
     `score` INT
 );
 
