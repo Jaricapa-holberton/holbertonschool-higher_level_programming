@@ -6,6 +6,8 @@ mysql -hlocalhost -uroot -p
 
 Ja95aricapa$
 
+https://www.youtube.com/watch?v=IWXQeXHDerg&t=143s
+
 $ sudo mysql -u root
 
 mysql> use mysql;
