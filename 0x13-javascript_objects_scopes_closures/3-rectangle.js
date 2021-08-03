@@ -8,15 +8,8 @@ module.exports = class Rectangle {
   }
 
   print () {
-    let i;
-    const char = 'X';
-    let printline;
-    const dimension = this.height;
-    for (i = 1; i <= dimension; i++) {
-      if (i === 1 || i === dimension) {
-        printline = Array(dimension + 1).join(char);
-      }
-      console.log(printline);
+    for (let i = 0; i < this.height; i++) {
+      console.log(('X'.repeat(this.width)));
     }
   }
 };
