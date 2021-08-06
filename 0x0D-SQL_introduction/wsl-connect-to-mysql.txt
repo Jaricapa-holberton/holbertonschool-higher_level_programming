@@ -1,14 +1,16 @@
 - Check root plugin
 
-sudo service mysql stop
+1) detener los servicios:
 
-mysql -hlocalhost -uroot -p (si no funciona solo quita el -p)
+sudo service mysql restart
 
-Ja95aricapa$
+(opcion para solo detenerlos)sudo service mysql stop
+
+2) cambiar los derechos de root:
 
 https://www.youtube.com/watch?v=IWXQeXHDerg&t=143s
 
-$ sudo mysql -u root
+sudo mysql -u root
 
 mysql> use mysql;
 mysql> select User, Host, plugin FROM mysql.user;
@@ -29,4 +31,9 @@ mysql> update user set plugin='mysql_native_password' where user = 'root';
 mysql> flush privileges;
 mysql> exit;
 
-$ sudo service mysql restart
+3) entrar con el usuario localhost:
+
+mysql -hlocalhost -uroot -p (si no funciona solo quita el -p)
+
+Ja95aricapa$
+
