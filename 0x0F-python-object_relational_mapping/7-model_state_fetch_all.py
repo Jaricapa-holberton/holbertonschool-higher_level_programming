@@ -9,7 +9,7 @@ from model_state import State
 
 if __name__ == "__main__":
 
-    # Create engine
+    # Create engine. The args comes from input
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
                            .format(argv[1], argv[2], argv[3]),
                            pool_pre_ping=True)
