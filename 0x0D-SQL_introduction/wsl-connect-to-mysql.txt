@@ -37,3 +37,31 @@ mysql -hlocalhost -uroot -p (si no funciona solo quita el -p)
 
 Ja95aricapa$
 
+----- para cambiar la clave de root a 'root', especialmente si no te deja entrar a mysql normalmente -----
+
+1) parar el proceso
+
+sudo /etc/init.d/mysql stop
+
+2) entrar en modo seguro a mysql
+
+sudo mysqld_safe --skip-grant-tables &
+
+... si no se puede entrar... es porque no se ha cerrado el proceso realmente.
+Hay que buscarlo con ps auxf, conseguir el pid y usar sudo kill PID
+
+3) desnistalar plugin de seguridad para que no evite cambiar contraseña root
+
+UNINSTALL COMPONENT 'file://component_validate_password';
+
+4) estando dentro de mysql, hay que cambiar la clave de root a 'root'
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'root';
+
+5) guardar
+
+FLUSH PRIVILEGES;
+exit
+
+
+
