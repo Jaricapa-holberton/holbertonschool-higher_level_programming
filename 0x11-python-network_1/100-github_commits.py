@@ -14,10 +14,13 @@ if __name__ == "__main__":
     url = 'https://api.github.com/repos/{}/{}/commits'.format(user, repository)
     # acess to the url and get the list of commits
     req = requests.get(url)
-    commits = req.json()
+    try:
+        commits = req.json()
     # order by most recent to oldest
-    for i in range(10):
-        commit = commits[i]
-        ses_sha = commit.get('sha')
-        ses_author = commit.get('commit').get('author').get('name')
-        print("{}: {}".format(ses_sha, ses_author))
+        for i in range(10):
+            commit = commits[i]
+            ses_sha = commit.get('sha')
+            ses_author = commit.get('commit').get('author').get('name')
+            print("{}: {}".format(ses_sha, ses_author))
+    except Exception as e:
+        pass
