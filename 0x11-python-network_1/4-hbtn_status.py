@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """script that fetches https://intranet.hbtn.io/status"""
-if __name__ == "__main__":    
+if __name__ == "__main__":
     import requests
 
     # get the data from the web page
