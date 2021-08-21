@@ -13,6 +13,6 @@ if __name__ == "__main__":
     ses_email = sys.argv[2]
     # upload the email on the url modifing the headers
     # NOTESS: try hodor changing the user_agent key with the data parameter
-    resp = requests.post(s_url, data={'email': ses_email})
+    resp = requests.post(ses_url, data={'email': ses_email})
     # print the response coded for utf-8
     print(resp.text)
