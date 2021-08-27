@@ -1,3 +1,7 @@
+sudo mysql_secure_installation
+
+sudo mysql -hlocalhost -uroot -p
+
 - Check root plugin
 
 1) detener los servicios:
