@@ -2,6 +2,11 @@ sudo mysql_secure_installation
 
 sudo mysql -hlocalhost -uroot -p
 
+--- ejecutar un archivo sql, imprimiendo el resultado en el stdout ---
+
+cat nombre_archivo.sql | sudo mysql -hlocalhost -uroot -p
+27/08/2021 -> clave_root = root
+
 - Check root plugin
 
 1) detener los servicios:
