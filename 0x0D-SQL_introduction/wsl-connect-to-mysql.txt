@@ -7,7 +7,19 @@ sudo mysql -hlocalhost -uroot -p
 cat nombre_archivo.sql | sudo mysql -hlocalhost -uroot -p
 27/08/2021 -> clave_root = root
 
-- Check root plugin
+NOTA: si se deja la configuración inicial de mysql, el entra con el comando:
+sudo mysql -hlocalhost -uroot -p
+
+sin embargo... no conecta a workbench así
+
+pero... si se desea conectar a workbench, se hace el procedimiento que sigue debajo de este texto.
+una vez hecho, ya no podras acceder en el terminal con:
+sudo mysql -hlocalhost -uroot -p
+pero si con:
+sudo mysql -u root 
+y sobre todo, ya se puede conectar con workbench, usando la clave root
+
+-----> update mysql plugin acces for root user
 
 1) detener los servicios:
 
@@ -34,19 +46,17 @@ mysql> select User, Host, plugin FROM mysql.user;
 | root             | localhost | auth_socket           |
 +------------------+-----------+-----------------------+
 
-- Change root plugin to mysql_native_password
+3) Change root plugin to mysql_native_password
 
 mysql> update user set plugin='mysql_native_password' where user = 'root';
 mysql> flush privileges;
 mysql> exit;
 
-3) entrar con el usuario localhost:
+4) entrar con el usuario localhost:
 
 mysql -hlocalhost -uroot -p (si no funciona solo quita el -p)
 
-Ja95aricapa$
-
------ para cambiar la clave de root a 'root', especialmente si no te deja entrar a mysql normalmente -----
+-----> para cambiar la clave de root a 'root', especialmente si no te deja entrar a mysql normalmente
 
 1) parar el proceso
 
