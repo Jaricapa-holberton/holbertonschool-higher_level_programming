@@ -67,7 +67,7 @@ sudo /etc/init.d/mysql stop
 sudo mysqld_safe --skip-grant-tables &
 
 ... si no se puede entrar... es porque no se ha cerrado el proceso realmente.
-Hay que buscarlo con ps auxf, conseguir el pid y usar sudo kill PID
+Hay que buscarlo con ps auxf y killall mysqld, conseguir el pid y usar sudo kill PID
 
 3) desnistalar plugin de seguridad para que no evite cambiar contraseña root
 
